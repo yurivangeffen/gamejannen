@@ -15,8 +15,9 @@ public class CameraMovement : MonoBehaviour
     float previousRotationX = 0;
     float cumulativeRotationX = 0;
     
-    //Deze moet nog getweakt worden
+    //Deze moeten nog getweakt worden
     float rotationThreshhold = 7;
+    float timeAfterRotating = 0.8f;//De tijd die de speler nog heeft na het roteren om werkelijk te schieten (in seconden).
 
     //Deze zijn om de speler even de tijd te geven om te richten na het draaien
     bool isRotating = false;
@@ -52,7 +53,7 @@ public class CameraMovement : MonoBehaviour
             {
                 if (!timerRunning)
                 {
-                    Debug.Log("Cumulative rotation: " + cumulativeRotationX + " degrees. Timer started.");
+                    Debug.Log("Wow een " + cumulativeRotationX + " noscope. Wat ben jij een baas.");
                     timerRunning = true;
                 }
             }
@@ -65,7 +66,7 @@ public class CameraMovement : MonoBehaviour
 
         if (timerRunning)
             timerTime += Time.deltaTime;
-        if (timerTime > 1)
+        if (timerTime > timeAfterRotating)
             RotationTimerElapsed();
 
         previousRotationX = rotationX;
@@ -73,7 +74,7 @@ public class CameraMovement : MonoBehaviour
 
     private void RotationTimerElapsed()
     {
-        Debug.Log("Timer elapsed");
+        Debug.Log("Tijd om te klikken voorbij.");
         timerRunning = false;
         timerTime = 0;
     }
