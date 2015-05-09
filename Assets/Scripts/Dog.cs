@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System.Collections.Generic;
 
 public class Dog : Shootable 
 {
@@ -12,11 +13,16 @@ public class Dog : Shootable
     private float timer = 0;
     private float frameRate = 0.2f;
 
-    private enum Mode {None, Walking, Jumping, Falling, InBushes };
+    private List<Vector3> ducksToGet;
+
+    private enum Mode {None, Walking, Jumping, Falling, InBushesWaiting, InBushesUp, InBushesDown };
     private Mode currentMode = Mode.Walking;
+
+
 
     void Awake()
     {
+        ducksToGet = new List<Vector3>();
         shootableRadius = 0.1f;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
@@ -36,17 +42,31 @@ public class Dog : Shootable
         if (Input.GetKeyDown(KeyCode.Space))
             Jump();
 
+        if (Input.GetKeyDown(KeyCode.A))
+            ducksToGet.Add(new Vector3(0, -0.3f, -1.6f));
 
-        if (currentMode == Mode.Walking)
-            WalkAround();
-        else
-            if (currentMode == Mode.Jumping)
+        switch (currentMode)
+        {
+            case Mode.Walking:
+                WalkAround();
+                break;
+            case Mode.Jumping:
                 Jumping();
-            else
-                if (currentMode == Mode.Falling)
-                    Falling();
-                else
-                    GrabDucks();
+                break;
+            case Mode.Falling:
+                Falling();
+                break;
+            case Mode.InBushesWaiting:
+                WaitAndGrabDucks();
+                break;
+            case Mode.InBushesUp:
+                ShowDuckUp();
+                break;
+            case Mode.InBushesDown:
+                ShowDuckDown();
+                break;
+        }
+
     }
 
     private void WalkAround()
@@ -104,14 +124,56 @@ public class Dog : Shootable
         if (timer < 0)
         {
             spriteRenderer.sprite = null;
-            currentMode = Mode.InBushes;
+            currentMode = Mode.InBushesWaiting;
         }
     }
 
-    private void GrabDucks()
+    public void GetDuck(Vector3 position)
     {
-        //TODO
+        ducksToGet.Add(position);
     }
+
+    private void WaitAndGrabDucks()
+    {
+        if (ducksToGet.Count > 0)
+        {
+            currentMode = Mode.InBushesUp;
+            transform.position = ducksToGet[0];
+            transform.LookAt(Camera.main.transform);
+            ducksToGet.RemoveAt(0);
+            timer = 0.3f;
+            spriteRenderer.sprite = sprites[8];
+        }
+    }
+
+    private void ShowDuckUp()
+    {
+        transform.position += new Vector3(0, 1, 0) * Time.deltaTime;
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            timer = 0.3f;
+            currentMode = Mode.None;
+            Invoke("GoDown", 0.5f);
+        }
+    }
+
+    private void GoDown()
+    {
+        currentMode = Mode.InBushesDown;
+    }
+
+    private void ShowDuckDown()
+    {
+        transform.position += new Vector3(0, -1, 0) * Time.deltaTime;
+        timer -= Time.deltaTime;
+        if (timer < 0)
+        {
+            spriteRenderer.sprite = null;
+            currentMode = Mode.InBushesWaiting;
+        }
+    }
+
 
     override protected void OnHit()
     {
