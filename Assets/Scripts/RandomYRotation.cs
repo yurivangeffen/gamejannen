@@ -1,15 +1,17 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class RandomYRotation : MonoBehaviour {
-
-	// Use this for initialization
-	void Start () {
+public class RandomYRotation : MonoBehaviour 
+{
+	
+	void Start () 
+    {
         transform.Rotate(Vector3.up, 360 * Random.value, Space.World);
 	}
 	
-	// Update is called once per frame
-	void Update () {
+	
+	void Update () 
+    {
 	
 	}
 }
