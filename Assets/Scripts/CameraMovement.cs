@@ -53,7 +53,7 @@ public class CameraMovement : MonoBehaviour
             {
                 if (!timerRunning)
                 {
-                    Debug.Log("Wow een " + cumulativeRotationX + " noscope. Wat ben jij een baas.");
+                    Debug.Log("Wow een " + cumulativeRotationX + " graden noscope. Wat ben jij een baas.");
                     timerRunning = true;
                 }
             }

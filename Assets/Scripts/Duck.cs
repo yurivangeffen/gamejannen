@@ -9,7 +9,6 @@ public class Duck : MonoBehaviour
     private GameObject myContainer;
     private SpriteRenderer spriteRenderer;
 
-
     
     private int color;//0,1 of 2. Staat voor de kleur van de eend.
     
@@ -36,13 +35,23 @@ public class Duck : MonoBehaviour
 	
 	void Update () 
     {
-        MoveRightUp();
+        MoveRight();
 
         animationTimer -= Time.deltaTime;
         if (animationTimer < 0)
         {
             AnimateDuck();
             animationTimer = frameRate;
+        }
+
+        if (Input.GetMouseButtonDown(0))
+        {
+            Vector3 screenPosition = Camera.main.WorldToViewportPoint(transform.position);
+            //Debug.Log("Pos: "+screenPosition);
+            if (screenPosition.x > 0.45f && screenPosition.x < 0.55f && screenPosition.y > 0.45f && screenPosition.y < 0.55f)
+            {
+                OnHit();
+            }
         }
 	}
 
@@ -70,6 +79,11 @@ public class Duck : MonoBehaviour
         if (currentDirection == direction.LeftUp || currentDirection == direction.RightUp)
             spriteIndex += 3;
         spriteRenderer.sprite = sprites[spriteIndex];
+    }
+
+    private void OnHit()
+    {
+        Debug.Log("Eend geraakt.");
     }
 
     private void MoveRight()
