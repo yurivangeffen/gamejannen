@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections.Generic;
 
 public class GunController : MonoBehaviour {
@@ -7,9 +8,12 @@ public class GunController : MonoBehaviour {
 
 	private int currentIndex = 0;
 	private Gun selected;
+	private Text gunName;
 	// Use this for initialization
 	void Start () {
 		selected = guns [0];
+		gunName = GameObject.FindGameObjectWithTag ("GunName").GetComponent<Text>();
+		gunName.text = guns[currentIndex].name;
 	}
 	
 	// Update is called once per frame
@@ -25,6 +29,7 @@ public class GunController : MonoBehaviour {
 
 			currentIndex = Mathf.Abs(currentIndex % guns.Count);
 			selected = guns[currentIndex];
+			gunName.text = guns[currentIndex].name;
 		}
 
 

@@ -11,7 +11,9 @@ public class Gun : MonoBehaviour {
 	public float reloadTime = 0.5f;
 	public int shotsUntilReload = 1;
 	public float spread = 0.05f;
-    public GameObject blackScreenPanel;//voor het zwart worden van het scherm bij een schot
+	public Sprite gunImage;
+	public GameObject blackScreenPanel;//voor het zwart worden van het scherm bij een schot
+
 
 
 	private int shot = 0;
