@@ -49,6 +49,11 @@ MonoBehaviour:
   - {fileID: 21300012, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
   - {fileID: 21300014, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
   - {fileID: 21300016, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300010, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300022, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300018, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300020, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  jumpSpeed: 2
 --- !u!212 &21295672
 SpriteRenderer:
   m_ObjectHideFlags: 1

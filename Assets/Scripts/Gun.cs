@@ -11,6 +11,8 @@ public class Gun : MonoBehaviour {
 	public float reloadTime = 0.5f;
 	public int shotsUntilReload = 1;
 	public float spread = 0.05f;
+    public GameObject blackScreenPanel;//voor het zwart worden van het scherm bij een schot
+
 
 	private int shot = 0;
 	private float passedTime = 0f;
@@ -43,9 +45,17 @@ public class Gun : MonoBehaviour {
 			shootable.OnShoot(spread);
 		}
 
+        blackScreenPanel.SetActive(true);
+        Invoke("removeBlackPanel", 0.03f);
+
 		AudioSource.PlayClipAtPoint (shootSounds [Random.Range(0, shootSounds.Count)], transform.position);
 	}
 	
+    public void removeBlackPanel()
+    {
+        blackScreenPanel.SetActive(false);
+    }
+
 	public void doStartReload() {
 		reloading = true;
 		passedReloadTime = 0f;

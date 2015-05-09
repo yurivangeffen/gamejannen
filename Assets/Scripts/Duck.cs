@@ -177,6 +177,11 @@ public class Duck : Shootable
     private void MoveDown()
     {
         transform.position += new Vector3(0, -fallSpeed, 0) * Time.deltaTime;
+        if (transform.position.y < -0.2)
+        {
+            FindObjectOfType<Dog>().GetDuck(transform.position);
+            Destroy(gameObject);
+        }
     }
 
     private void MoveRight()
