@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6d84e90f4bf962c4da14b6bcc0de388f
-timeCreated: 1431130807
+timeCreated: 1431167561
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -101,8 +101,8 @@ TextureImporter:
         y: 224
         width: 53
         height: 40
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_1
       rect:
@@ -111,8 +111,8 @@ TextureImporter:
         y: 223
         width: 51
         height: 43
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_2
       rect:
@@ -121,8 +121,8 @@ TextureImporter:
         y: 223
         width: 52
         height: 43
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_3
       rect:
@@ -131,8 +131,8 @@ TextureImporter:
         y: 224
         width: 55
         height: 40
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_4
       rect:
@@ -141,8 +141,8 @@ TextureImporter:
         y: 224
         width: 53
         height: 40
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_5
       rect:
@@ -161,8 +161,8 @@ TextureImporter:
         y: 160
         width: 53
         height: 48
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_7
       rect:
@@ -171,8 +171,8 @@ TextureImporter:
         y: 161
         width: 35
         height: 46
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 7
+      pivot: {x: .5, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_8
       rect:
@@ -181,8 +181,8 @@ TextureImporter:
         y: 168
         width: 33
         height: 32
-      alignment: 0
-      pivot: {x: .5, y: .5}
+      alignment: 9
+      pivot: {x: .530968845, y: -.208994389}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_9
       rect:

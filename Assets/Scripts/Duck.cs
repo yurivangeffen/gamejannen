@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-public class Duck : MonoBehaviour 
+public class Duck : Shootable 
 {
 
     private float flySpeed = 0.4f;
@@ -26,11 +26,17 @@ public class Duck : MonoBehaviour
     private float timeBeforeNewMovement = 1f;
 
     private const int amountOfSprites = 8;
+
+    void Awake()
+    {
+        spriteRenderer = GetComponent<SpriteRenderer>();
+        shootableRadius = 0.05f;
+    }
+
 	void Start () 
     {
         color = 1;
-        spriteRenderer = GetComponent<SpriteRenderer>();
-
+        //Voor het roteren rond de speler
         myContainer = new GameObject();
         myContainer.name = "GRP_" + transform.gameObject.name;
         myContainer.transform.position = new Vector3(0, 0, 0);
@@ -59,16 +65,6 @@ public class Duck : MonoBehaviour
             newMovementTimer = timeBeforeNewMovement - 0.5f + Random.value;
         }
 	}
-
-    private void OnShoot(float radius)
-    {
-        Vector3 screenPosition = Camera.main.WorldToViewportPoint(transform.position);
-        //Debug.Log("Pos: "+screenPosition);
-        if (screenPosition.x > 0.5f - radius && screenPosition.x < 0.5f + radius && screenPosition.y > 0.5f - radius && screenPosition.y < 0.5f + radius)
-        {
-            OnHit();
-        }
-    }
 
     private void AnimateDuck()
     {
@@ -115,7 +111,7 @@ public class Duck : MonoBehaviour
         spriteRenderer.sprite = sprites[spriteIndex];
     }
 
-    private void OnHit()
+    override protected void OnHit()
     {
         if (currentDirection == direction.Falling || currentDirection == direction.JustHit)
             return;
