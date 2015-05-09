@@ -1,8 +1,9 @@
 ﻿using UnityEngine;
-using System.Collections;
+using System.Collections.Generic;
 
 public class Duck : Shootable 
 {
+	public List<AudioClip> deathNotes;
 
     private float flySpeed = 0.4f;
     private float flySpeedUp = 0.4f;
@@ -26,6 +27,8 @@ public class Duck : Shootable
     private float timeBeforeNewMovement = 1f;
 
     private const int amountOfSprites = 8;
+
+
 
     void Awake()
     {
@@ -112,13 +115,20 @@ public class Duck : Shootable
     }
 
     override protected void OnHit()
-    {
+	{
+		var exp = GetComponent<ParticleSystem>();
+		exp.Play();
+
         if (currentDirection == direction.Falling || currentDirection == direction.JustHit)
             return;
         Camera.main.GetComponent<CameraMovement>().OnHit();
         currentDirection = direction.JustHit;
 
         spriteRenderer.sprite = sprites[color * amountOfSprites + 6];
+
+		if (deathNotes.Count > 0 && Random.Range (0, 10) == 0)
+			AudioSource.PlayClipAtPoint (deathNotes [Random.Range (0, deathNotes.Count)], transform.position, 3f);
+
     }
 
     private void ChooseRandomMovement()
