@@ -4,8 +4,10 @@ using System.Collections.Generic;
 
 public class Dog : Shootable 
 {
+
     public Sprite[] sprites;
     public float jumpSpeed = 0.4f;
+	public AudioClip hitSound = null;
 
     private GameObject myContainer;
     private SpriteRenderer spriteRenderer;
@@ -177,6 +179,7 @@ public class Dog : Shootable
 
     override protected void OnHit()
     {
-
+		if (hitSound != null)
+			AudioSource.PlayClipAtPoint (hitSound, transform.position, 3f);
     }
 }
