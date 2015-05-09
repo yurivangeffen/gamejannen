@@ -16,8 +16,6 @@ public class Gun : MonoBehaviour {
 	private float passedReloadTime = 0f;
 	private bool reloading = false;
 
-	private Random rand = new Random();
-
 	// Use this for initialization
 	void Start () {
 		
