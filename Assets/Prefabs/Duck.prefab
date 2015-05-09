@@ -24,7 +24,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 162640}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -6}
+  m_LocalPosition: {x: 0, y: 0, z: -4}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -40,9 +40,25 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f3f36f0ed5feef4abdc72542513b1bb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  sprite1: {fileID: 0}
-  sprite2: {fileID: 0}
-  sprite3: {fileID: 0}
+  sprites:
+  - {fileID: 21300024, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300026, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300028, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300042, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300044, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300046, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300030, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300032, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300034, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300048, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300050, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300052, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300036, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300038, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300040, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300054, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300056, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
+  - {fileID: 21300058, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
 --- !u!212 &21266286
 SpriteRenderer:
   m_ObjectHideFlags: 1
