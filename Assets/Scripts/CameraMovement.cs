@@ -19,6 +19,8 @@ public class CameraMovement : MonoBehaviour
     float rotationThreshhold = 7;
     float timeAfterRotating = 0.8f;//De tijd die de speler nog heeft na het roteren om werkelijk te schieten (in seconden).
 
+    float rotationBeforeTimer = 0;
+
     //Deze zijn om de speler even de tijd te geven om te richten na het draaien
     bool isRotating = false;
     bool timerRunning = false;
@@ -54,6 +56,7 @@ public class CameraMovement : MonoBehaviour
                 if (!timerRunning)
                 {
                     Debug.Log("Wow een " + cumulativeRotationX + " graden noscope. Wat ben jij een baas.");
+                    rotationBeforeTimer = cumulativeRotationX;
                     timerRunning = true;
                 }
             }
@@ -77,6 +80,20 @@ public class CameraMovement : MonoBehaviour
         Debug.Log("Tijd om te klikken voorbij.");
         timerRunning = false;
         timerTime = 0;
+        rotationBeforeTimer = 0;
+    }
+
+
+    public void OnHit()
+    {
+        if (timerRunning || isRotating)//tijdens een noscope
+        {
+            Debug.Log("Je hebt een eend geschoten! Je nosocpe score is: " + rotationBeforeTimer + ".");
+        }
+        else
+        {//niet aan het draaien
+            Debug.Log("Je hebt een eend geschoten! Je was niet aaan het noscopen.");
+        }
     }
 
     private float GetRotationChange(float rotation1, float rotation2)
