@@ -35,7 +35,7 @@ public class Duck : Shootable
 
 	void Start () 
     {
-        color = 1;
+        color = Random.Range(0, 3);
         //Voor het roteren rond de speler
         myContainer = new GameObject();
         myContainer.name = "GRP_" + transform.gameObject.name;
