@@ -16,6 +16,9 @@ GameObject:
   - 114: {fileID: 11450798}
   - 114: {fileID: 11430492}
   - 114: {fileID: 11449694}
+  - 114: {fileID: 11413972}
+  - 114: {fileID: 11462000}
+  - 114: {fileID: 11425266}
   m_Layer: 0
   m_Name: Player
   m_TagString: MainCamera
@@ -96,6 +99,34 @@ MonoBehaviour:
   sensitivityY: 10
   minimumY: -60
   maximumY: 60
+--- !u!114 &11413972
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028b958773ca741c5aa09e013a0915be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toPlace: {fileID: 123780, guid: c1d9a8a9c296e4436bc2af02abba6b8c, type: 2}
+  radius: 5
+  objectWidth: 2
+--- !u!114 &11425266
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028b958773ca741c5aa09e013a0915be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toPlace: {fileID: 123780, guid: c1d9a8a9c296e4436bc2af02abba6b8c, type: 2}
+  radius: 7
+  objectWidth: 1
 --- !u!114 &11430492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -138,6 +169,20 @@ MonoBehaviour:
   toPlace: {fileID: 118526, guid: 447cb2e72485c4148b84dddc710a2eab, type: 2}
   radius: 1.5
   objectWidth: .800000012
+--- !u!114 &11462000
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028b958773ca741c5aa09e013a0915be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toPlace: {fileID: 123780, guid: c1d9a8a9c296e4436bc2af02abba6b8c, type: 2}
+  radius: 6
+  objectWidth: 3
 --- !u!124 &12487352
 Behaviour:
   m_ObjectHideFlags: 1
