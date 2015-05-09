@@ -37,8 +37,12 @@ public class Gun : MonoBehaviour {
 	public void doShoot() {
 		shot++;
 		passedTime = 0f;
-
 		
+		Shootable[] shootables = FindObjectsOfType(typeof(Shootable)) as Shootable[];
+		foreach (Shootable shootable in shootables) {
+			shootable.OnShoot(spread);
+		}
+
 		AudioSource.PlayClipAtPoint (shootSounds [Random.Range(0, shootSounds.Count)], transform.position);
 	}
 	
