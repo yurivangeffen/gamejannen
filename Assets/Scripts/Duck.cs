@@ -36,7 +36,7 @@ public class Duck : Shootable
 	void Start () 
     {
         color = 1;
-
+        //Voor het roteren rond de speler
         myContainer = new GameObject();
         myContainer.name = "GRP_" + transform.gameObject.name;
         myContainer.transform.position = new Vector3(0, 0, 0);
@@ -65,8 +65,6 @@ public class Duck : Shootable
             newMovementTimer = timeBeforeNewMovement - 0.5f + Random.value;
         }
 	}
-
-    
 
     private void AnimateDuck()
     {
