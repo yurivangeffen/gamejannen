@@ -1,6 +1,6 @@
 fileFormatVersion: 2
 guid: 6d84e90f4bf962c4da14b6bcc0de388f
-timeCreated: 1431127830
+timeCreated: 1431130807
 licenseType: Free
 TextureImporter:
   fileIDToRecycleName:
@@ -102,7 +102,7 @@ TextureImporter:
         width: 53
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_1
       rect:
@@ -112,7 +112,7 @@ TextureImporter:
         width: 51
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_2
       rect:
@@ -122,7 +122,7 @@ TextureImporter:
         width: 52
         height: 43
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_3
       rect:
@@ -132,7 +132,7 @@ TextureImporter:
         width: 55
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_4
       rect:
@@ -142,7 +142,7 @@ TextureImporter:
         width: 53
         height: 40
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_5
       rect:
@@ -152,7 +152,7 @@ TextureImporter:
         width: 43
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_6
       rect:
@@ -162,7 +162,7 @@ TextureImporter:
         width: 53
         height: 48
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_7
       rect:
@@ -172,7 +172,7 @@ TextureImporter:
         width: 35
         height: 46
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_8
       rect:
@@ -182,7 +182,7 @@ TextureImporter:
         width: 33
         height: 32
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_9
       rect:
@@ -192,7 +192,7 @@ TextureImporter:
         width: 29
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_10
       rect:
@@ -202,7 +202,7 @@ TextureImporter:
         width: 29
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_11
       rect:
@@ -212,7 +212,7 @@ TextureImporter:
         width: 56
         height: 39
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_12
       rect:
@@ -221,8 +221,8 @@ TextureImporter:
         y: 122
         width: 34
         height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .407148838, y: .560710251}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_13
       rect:
@@ -231,8 +231,8 @@ TextureImporter:
         y: 124
         width: 34
         height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .400006354, y: .560710907}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_14
       rect:
@@ -241,8 +241,8 @@ TextureImporter:
         y: 120
         width: 32
         height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .416523218, y: .395925254}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_15
       rect:
@@ -251,8 +251,8 @@ TextureImporter:
         y: 122
         width: 34
         height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .417271346, y: .617198944}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_16
       rect:
@@ -261,8 +261,8 @@ TextureImporter:
         y: 124
         width: 34
         height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .367634505, y: .537503839}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_17
       rect:
@@ -271,8 +271,8 @@ TextureImporter:
         y: 120
         width: 32
         height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .341781616, y: .379452854}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_18
       rect:
@@ -281,8 +281,8 @@ TextureImporter:
         y: 122
         width: 34
         height: 24
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .415837914, y: .568131745}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_19
       rect:
@@ -291,8 +291,8 @@ TextureImporter:
         y: 124
         width: 34
         height: 20
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .391790956, y: .520439923}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_20
       rect:
@@ -301,8 +301,8 @@ TextureImporter:
         y: 120
         width: 32
         height: 28
-      alignment: 0
-      pivot: {x: 0, y: 0}
+      alignment: 9
+      pivot: {x: .391415596, y: .368603855}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_21
       rect:
@@ -312,7 +312,7 @@ TextureImporter:
         width: 25
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_22
       rect:
@@ -322,7 +322,7 @@ TextureImporter:
         width: 32
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_23
       rect:
@@ -332,7 +332,7 @@ TextureImporter:
         width: 27
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_24
       rect:
@@ -342,7 +342,7 @@ TextureImporter:
         width: 25
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_25
       rect:
@@ -352,7 +352,7 @@ TextureImporter:
         width: 32
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_26
       rect:
@@ -362,7 +362,7 @@ TextureImporter:
         width: 27
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_27
       rect:
@@ -372,7 +372,7 @@ TextureImporter:
         width: 25
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_28
       rect:
@@ -382,7 +382,7 @@ TextureImporter:
         width: 32
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_29
       rect:
@@ -392,7 +392,7 @@ TextureImporter:
         width: 27
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_30
       rect:
@@ -402,7 +402,7 @@ TextureImporter:
         width: 24
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_31
       rect:
@@ -412,7 +412,7 @@ TextureImporter:
         width: 32
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_32
       rect:
@@ -422,7 +422,7 @@ TextureImporter:
         width: 30
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_33
       rect:
@@ -432,7 +432,7 @@ TextureImporter:
         width: 24
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_34
       rect:
@@ -442,7 +442,7 @@ TextureImporter:
         width: 32
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_35
       rect:
@@ -452,7 +452,7 @@ TextureImporter:
         width: 30
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_36
       rect:
@@ -462,7 +462,7 @@ TextureImporter:
         width: 24
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_37
       rect:
@@ -472,7 +472,7 @@ TextureImporter:
         width: 32
         height: 31
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_38
       rect:
@@ -482,7 +482,7 @@ TextureImporter:
         width: 30
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_39
       rect:
@@ -492,7 +492,7 @@ TextureImporter:
         width: 31
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_40
       rect:
@@ -502,7 +502,7 @@ TextureImporter:
         width: 18
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_41
       rect:
@@ -512,7 +512,7 @@ TextureImporter:
         width: 31
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_42
       rect:
@@ -522,7 +522,7 @@ TextureImporter:
         width: 18
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_43
       rect:
@@ -532,7 +532,7 @@ TextureImporter:
         width: 31
         height: 29
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
     - name: duckhunt_various_sheet_44
       rect:
@@ -542,7 +542,7 @@ TextureImporter:
         width: 18
         height: 30
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: .5, y: .5}
       border: {x: 0, y: 0, z: 0, w: 0}
   spritePackingTag: 
   userData: 
