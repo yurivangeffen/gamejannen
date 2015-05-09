@@ -5,16 +5,27 @@ public class Duck : MonoBehaviour
 {
 
     private float flySpeed = 0.4f;
+    private float flySpeedUp = 0.4f;
     private GameObject myContainer;
     private SpriteRenderer spriteRenderer;
 
-    public Sprite sprite1, sprite2, sprite3;
+
+    
+    private int color;//0,1 of 2. Staat voor de kleur van de eend.
+    
+    public Sprite[] sprites;
     private Sprite currentSprite;
+    private int spriteNumber = 0;
     private float animationTimer = 0;
     private float frameRate = 0.2f;
 
+    private enum direction {Left, Right, LeftUp, RightUp};
+    private direction currentDirection;
+
+    private const int amountOfSprites = 6;
 	void Start () 
     {
+        color = 1;
         spriteRenderer = GetComponent<SpriteRenderer>();
 
         myContainer = new GameObject();
@@ -25,7 +36,7 @@ public class Duck : MonoBehaviour
 	
 	void Update () 
     {
-        MoveRight();
+        MoveRightUp();
 
         animationTimer -= Time.deltaTime;
         if (animationTimer < 0)
@@ -37,33 +48,57 @@ public class Duck : MonoBehaviour
 
     private void AnimateDuck()
     {
-        if (currentSprite==sprite1)
+        int spriteIndex;
+        if (spriteNumber == 0)
         {
-            currentSprite = sprite2;
+            spriteIndex = color * amountOfSprites + 1;
+            spriteNumber = 1;
         }
         else
         {
-            if (currentSprite==sprite2)
+            if (spriteNumber == 1)
             {
-                currentSprite = sprite3;
+                spriteIndex = color * amountOfSprites + 2;
+                spriteNumber = 2;
             }
             else
             {
-                currentSprite = sprite1;
+                spriteIndex = color * amountOfSprites;
+                spriteNumber = 0;
             }
         }
-        spriteRenderer.sprite = currentSprite;
+        if (currentDirection == direction.LeftUp || currentDirection == direction.RightUp)
+            spriteIndex += 3;
+        spriteRenderer.sprite = sprites[spriteIndex];
     }
 
     private void MoveRight()
     {
         transform.localScale = new Vector3(-1, 1, 1);
         myContainer.transform.Rotate(Vector3.up, flySpeed);
+        currentDirection = direction.Right;
     }
 
     private void MoveLeft()
     {
         transform.localScale = new Vector3(1, 1, 1);
         myContainer.transform.Rotate(Vector3.up, -flySpeed);
+        currentDirection = direction.Left;
+    }
+
+    private void MoveRightUp()
+    {
+        transform.localScale = new Vector3(-1, 1, 1);
+        transform.position += new Vector3(0, flySpeedUp, 0) * Time.deltaTime;
+        myContainer.transform.Rotate(Vector3.up, flySpeed);
+        currentDirection = direction.RightUp;
+    }
+
+    private void MoveLeftUp()
+    {
+        transform.localScale = new Vector3(1, 1, 1);
+        transform.position += new Vector3(0, flySpeedUp, 0) * Time.deltaTime;
+        myContainer.transform.Rotate(Vector3.up, -flySpeed);
+        currentDirection = direction.LeftUp;
     }
 }
