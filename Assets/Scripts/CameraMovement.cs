@@ -31,12 +31,11 @@ public class CameraMovement : MonoBehaviour
 
 	int score;
 
-	ScoreKeeper scoreUI, scoreBackUI;
+	ScoreKeeper scoreUI;
 
     void Start()
 	{
 		scoreUI = GameObject.FindGameObjectWithTag ("ScoreUI").GetComponent<ScoreKeeper>();
-		scoreBackUI = GameObject.FindGameObjectWithTag ("ScoreBackUI").GetComponent<ScoreKeeper>();
         Cursor.lockState = CursorLockMode.Locked;//Uncomment dit voor de final versie
     }
 
@@ -101,8 +100,6 @@ public class CameraMovement : MonoBehaviour
         if (timerRunning || isRotating)//tijdens een noscope
         {
             Debug.Log("Je hebt een eend geschoten! Je nosocpe score is: " + rotationBeforeTimer + ".");
-			
-			scoreBackUI.setScore((int)rotationBeforeTimer);
 			scoreUI.setScore((int)rotationBeforeTimer);
 
         }
