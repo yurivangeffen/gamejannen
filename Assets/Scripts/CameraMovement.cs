@@ -1,4 +1,5 @@
 ﻿using UnityEngine;
+using UnityEngine.UI;
 using System.Collections;
 
 public class CameraMovement : MonoBehaviour 
@@ -9,6 +10,8 @@ public class CameraMovement : MonoBehaviour
     public float minimumY = -60F;
     public float maximumY = 60F;
 
+    public Text rotationScore;
+
     float rotationY = 0F;
 
     //360 noscope variabelen #yolo
@@ -17,7 +20,7 @@ public class CameraMovement : MonoBehaviour
     
     //Deze moeten nog getweakt worden
     float rotationThreshhold = 7;
-    float timeAfterRotating = 0.8f;//De tijd die de speler nog heeft na het roteren om werkelijk te schieten (in seconden).
+    float timeAfterRotating = 2f;//De tijd die de speler nog heeft na het roteren om werkelijk te schieten (in seconden).
 
     float rotationBeforeTimer = 0;
 
@@ -28,7 +31,7 @@ public class CameraMovement : MonoBehaviour
 
     void Start()
     {
-        
+        //Cursor.lockState = CursorLockMode.Locked;//Uncomment dit voor de final versie
     }
 
     void Update()
@@ -53,7 +56,7 @@ public class CameraMovement : MonoBehaviour
         {
             if (isRotating)
             {
-                if (!timerRunning)
+                if (!timerRunning || (timerRunning && rotationBeforeTimer < cumulativeRotationX))
                 {
                     Debug.Log("Wow een " + cumulativeRotationX + " graden noscope. Wat ben jij een baas.");
                     rotationBeforeTimer = cumulativeRotationX;
@@ -72,6 +75,8 @@ public class CameraMovement : MonoBehaviour
         if (timerTime > timeAfterRotating)
             RotationTimerElapsed();
 
+        rotationScore.text = Mathf.Round(Mathf.Max(cumulativeRotationX, rotationBeforeTimer)).ToString();
+
         previousRotationX = rotationX;
     }
 
@@ -89,6 +94,9 @@ public class CameraMovement : MonoBehaviour
         if (timerRunning || isRotating)//tijdens een noscope
         {
             Debug.Log("Je hebt een eend geschoten! Je nosocpe score is: " + rotationBeforeTimer + ".");
+            //Reset de noscope waarden als je een eend neerschiet
+            cumulativeRotationX = 0;
+            rotationBeforeTimer = 0;
         }
         else
         {//niet aan het draaien
