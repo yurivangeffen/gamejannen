@@ -37,6 +37,7 @@ public class Gun : MonoBehaviour {
 	public void doShoot() {
 		shot++;
 		passedTime = 0f;
+
 		
 		AudioSource.PlayClipAtPoint (shootSounds [Random.Range(0, shootSounds.Count)], transform.position);
 	}
