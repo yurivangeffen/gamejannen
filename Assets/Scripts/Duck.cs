@@ -6,7 +6,7 @@ public class Duck : MonoBehaviour
 
     private float flySpeed = 0.4f;
     private float flySpeedUp = 0.4f;
-    private float fallSpeed = 1f;
+    private float fallSpeed = 2f;
     private GameObject myContainer;
     private SpriteRenderer spriteRenderer;
 
@@ -22,6 +22,8 @@ public class Duck : MonoBehaviour
 
     private enum direction {Left, Right, LeftUp, RightUp, JustHit, Falling};
     private direction currentDirection;
+    private float newMovementTimer = 0;
+    private float timeBeforeNewMovement = 1f;
 
     private const int amountOfSprites = 8;
 	void Start () 
@@ -38,24 +40,7 @@ public class Duck : MonoBehaviour
 	
 	void Update () 
     {
-        switch (currentDirection)
-        {
-            case direction.Right:
-                MoveRight();
-                break;
-            case direction.Left:
-                MoveLeft();
-                break;
-            case direction.RightUp:
-                MoveRightUp();
-                break;
-            case direction.LeftUp:
-                MoveLeftUp();
-                break;
-            case direction.Falling:
-                MoveDown();
-                break;
-        }
+        Move();
 
         animationTimer -= Time.deltaTime;
         if (animationTimer < 0)
@@ -63,6 +48,17 @@ public class Duck : MonoBehaviour
             AnimateDuck();
             animationTimer = frameRate;
         }
+
+        newMovementTimer -= Time.deltaTime;
+        if (newMovementTimer < 0)
+        {
+            if (currentDirection != direction.JustHit && currentDirection != direction.Falling)
+            {
+                ChooseRandomMovement();
+            }
+            newMovementTimer = timeBeforeNewMovement - 0.5f + Random.value;
+        }
+
 
         if (Input.GetMouseButtonDown(0))
         {
@@ -122,10 +118,55 @@ public class Duck : MonoBehaviour
 
     private void OnHit()
     {
+        if (currentDirection == direction.Falling || currentDirection == direction.JustHit)
+            return;
         Camera.main.GetComponent<CameraMovement>().OnHit();
         currentDirection = direction.JustHit;
 
         spriteRenderer.sprite = sprites[color * amountOfSprites + 6];
+    }
+
+    private void ChooseRandomMovement()
+    {
+        float random = Random.value;
+        if (random < 0.25f)
+        {
+            currentDirection = direction.Left;
+            return;
+        }
+        if (random < 0.5f)
+        {
+            currentDirection = direction.Right;
+            return;
+        }
+        if (random < 0.75f)
+        {
+            currentDirection = direction.LeftUp;
+            return;
+        }
+        currentDirection = direction.RightUp;
+    }
+
+    private void Move()
+    {
+        switch (currentDirection)
+        {
+            case direction.Right:
+                MoveRight();
+                break;
+            case direction.Left:
+                MoveLeft();
+                break;
+            case direction.RightUp:
+                MoveRightUp();
+                break;
+            case direction.LeftUp:
+                MoveLeftUp();
+                break;
+            case direction.Falling:
+                MoveDown();
+                break;
+        }
     }
 
     private void MoveDown()

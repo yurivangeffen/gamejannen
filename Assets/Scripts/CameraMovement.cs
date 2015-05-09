@@ -94,9 +94,6 @@ public class CameraMovement : MonoBehaviour
         if (timerRunning || isRotating)//tijdens een noscope
         {
             Debug.Log("Je hebt een eend geschoten! Je nosocpe score is: " + rotationBeforeTimer + ".");
-            //Reset de noscope waarden als je een eend neerschiet
-            cumulativeRotationX = 0;
-            rotationBeforeTimer = 0;
         }
         else
         {//niet aan het draaien
