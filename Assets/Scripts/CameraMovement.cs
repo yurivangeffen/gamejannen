@@ -14,6 +14,8 @@ public class CameraMovement : MonoBehaviour
 
     public GameObject explosionObject;
 
+    public AudioClip explosionSound;
+
     float rotationY = 0F;
 
     //360 noscope variabelen #yolo
@@ -35,7 +37,7 @@ public class CameraMovement : MonoBehaviour
 
 	ScoreKeeper scoreUI;
     public Text timeText;
-    private float time = 5;//tijd voor het level in seconden
+    private float time = 150;//tijd voor het level in seconden
 
     void Start()
 	{
@@ -53,16 +55,12 @@ public class CameraMovement : MonoBehaviour
         float z = Mathf.Sin(yRot) * distance;
         Vector3 position = new Vector3(x, 0, z);
         Instantiate(explosionObject, position, Quaternion.identity);
-        
+        AudioSource.PlayClipAtPoint(explosionSound, position, 5);
 
     }
 
     void Update()
     {
-
-        if (Input.GetKeyDown(KeyCode.B))
-            TimeUp();
-
 
         time -= Time.deltaTime;
         int minutes = (int)(time / 60);
