@@ -9,6 +9,8 @@ public class Dog : Shootable
     public float jumpSpeed = 0.4f;
 	public AudioClip hitSound = null;
 
+    private int hitCount = 0;
+
     private GameObject myContainer;
     private SpriteRenderer spriteRenderer;
     private int spriteIndex = 0;
@@ -25,7 +27,7 @@ public class Dog : Shootable
     void Awake()
     {
         ducksToGet = new List<Vector3>();
-        shootableRadius = 0.1f;
+        shootableRadius = 0.05f;
         spriteRenderer = GetComponent<SpriteRenderer>();
     }
 	
@@ -183,7 +185,10 @@ public class Dog : Shootable
 
     override protected void OnHit()
     {
+        hitCount++;
 		if (hitSound != null)
 			AudioSource.PlayClipAtPoint (hitSound, transform.position, 3f);
+        if (hitCount > 1)
+            Application.LoadLevel("RIP");
     }
 }
