@@ -54,6 +54,7 @@ MonoBehaviour:
   - {fileID: 21300018, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
   - {fileID: 21300020, guid: 6d84e90f4bf962c4da14b6bcc0de388f, type: 3}
   jumpSpeed: 2
+  hitSound: {fileID: 8300000, guid: 6304294bc895743d39ecfe265a01482b, type: 3}
 --- !u!212 &21295672
 SpriteRenderer:
   m_ObjectHideFlags: 1

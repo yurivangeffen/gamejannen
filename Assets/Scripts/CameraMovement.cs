@@ -29,9 +29,15 @@ public class CameraMovement : MonoBehaviour
     bool timerRunning = false;
     float timerTime = 0;
 
+	int score;
+
+	ScoreKeeper scoreUI, scoreBackUI;
+
     void Start()
-    {
-        //Cursor.lockState = CursorLockMode.Locked;//Uncomment dit voor de final versie
+	{
+		scoreUI = GameObject.FindGameObjectWithTag ("ScoreUI").GetComponent<ScoreKeeper>();
+		scoreBackUI = GameObject.FindGameObjectWithTag ("ScoreBackUI").GetComponent<ScoreKeeper>();
+        Cursor.lockState = CursorLockMode.Locked;//Uncomment dit voor de final versie
     }
 
     void Update()
@@ -75,7 +81,8 @@ public class CameraMovement : MonoBehaviour
         if (timerTime > timeAfterRotating)
             RotationTimerElapsed();
 
-        rotationScore.text = Mathf.Round(Mathf.Max(cumulativeRotationX, rotationBeforeTimer)).ToString();
+		score = (int)Mathf.Max(cumulativeRotationX, rotationBeforeTimer);
+		rotationScore.text = score.ToString();
 
         previousRotationX = rotationX;
     }
@@ -94,6 +101,10 @@ public class CameraMovement : MonoBehaviour
         if (timerRunning || isRotating)//tijdens een noscope
         {
             Debug.Log("Je hebt een eend geschoten! Je nosocpe score is: " + rotationBeforeTimer + ".");
+			
+			scoreBackUI.setScore((int)rotationBeforeTimer);
+			scoreUI.setScore((int)rotationBeforeTimer);
+
         }
         else
         {//niet aan het draaien
