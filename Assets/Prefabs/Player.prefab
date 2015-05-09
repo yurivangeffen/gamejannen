@@ -106,8 +106,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toPlace: {fileID: 118526, guid: 447cb2e72485c4148b84dddc710a2eab, type: 2}
-  radius: 4
-  objectWidth: 1
+  radius: 1.5
+  objectWidth: .800000012
 --- !u!124 &12487352
 Behaviour:
   m_ObjectHideFlags: 1
