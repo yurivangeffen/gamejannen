@@ -58,18 +58,17 @@ public class Duck : MonoBehaviour
             }
             newMovementTimer = timeBeforeNewMovement - 0.5f + Random.value;
         }
-
-
-        if (Input.GetMouseButtonDown(0))
-        {
-            Vector3 screenPosition = Camera.main.WorldToViewportPoint(transform.position);
-            //Debug.Log("Pos: "+screenPosition);
-            if (screenPosition.x > 0.45f && screenPosition.x < 0.55f && screenPosition.y > 0.45f && screenPosition.y < 0.55f)
-            {
-                OnHit();
-            }
-        }
 	}
+
+    private void OnShoot(float radius)
+    {
+        Vector3 screenPosition = Camera.main.WorldToViewportPoint(transform.position);
+        //Debug.Log("Pos: "+screenPosition);
+        if (screenPosition.x > 0.5f - radius && screenPosition.x < 0.5f + radius && screenPosition.y > 0.5f - radius && screenPosition.y < 0.5f + radius)
+        {
+            OnHit();
+        }
+    }
 
     private void AnimateDuck()
     {
