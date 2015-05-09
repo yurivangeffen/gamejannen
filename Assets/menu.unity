@@ -5328,6 +5328,10 @@ GameObject:
   - 124: {fileID: 662391603}
   - 81: {fileID: 662391602}
   - 114: {fileID: 662391601}
+  - 114: {fileID: 662391607}
+  - 114: {fileID: 662391608}
+  - 114: {fileID: 662391609}
+  - 114: {fileID: 662391610}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -5412,6 +5416,62 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 1
+--- !u!114 &662391607
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 662391600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028b958773ca741c5aa09e013a0915be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toPlace: {fileID: 118526, guid: 447cb2e72485c4148b84dddc710a2eab, type: 2}
+  radius: 4
+  objectWidth: 1.5
+--- !u!114 &662391608
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 662391600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028b958773ca741c5aa09e013a0915be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toPlace: {fileID: 118526, guid: 447cb2e72485c4148b84dddc710a2eab, type: 2}
+  radius: 1
+  objectWidth: 1
+--- !u!114 &662391609
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 662391600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028b958773ca741c5aa09e013a0915be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toPlace: {fileID: 118526, guid: 447cb2e72485c4148b84dddc710a2eab, type: 2}
+  radius: 2
+  objectWidth: .5
+--- !u!114 &662391610
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 662391600}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028b958773ca741c5aa09e013a0915be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toPlace: {fileID: 123780, guid: c1d9a8a9c296e4436bc2af02abba6b8c, type: 2}
+  radius: 4
+  objectWidth: 2
 --- !u!1 &668402074
 GameObject:
   m_ObjectHideFlags: 0
@@ -11153,6 +11213,8 @@ GameObject:
   - 224: {fileID: 1353792040}
   - 222: {fileID: 1353792042}
   - 114: {fileID: 1353792041}
+  - 114: {fileID: 1353792044}
+  - 114: {fileID: 1353792043}
   m_Layer: 5
   m_Name: Text
   m_TagString: Untagged
@@ -11191,14 +11253,14 @@ MonoBehaviour:
   m_Material: {fileID: 0}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FontData:
-    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 36
-    m_FontStyle: 1
+    m_Font: {fileID: 12800000, guid: e884d88cc2c514d56ba27dce81a6815a, type: 3}
+    m_FontSize: 25
+    m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
     m_MaxSize: 40
     m_Alignment: 4
-    m_RichText: 1
+    m_RichText: 0
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
@@ -11209,6 +11271,34 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1353792039}
+--- !u!114 &1353792043
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1353792039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1573420865, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: .5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
+--- !u!114 &1353792044
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1353792039}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -900027084, guid: f5f67c52d1564df4a8936ccd202a3bd8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_EffectColor: {r: 0, g: 0, b: 0, a: .5}
+  m_EffectDistance: {x: 1, y: -1}
+  m_UseGraphicAlpha: 1
 --- !u!1 &1366413516
 GameObject:
   m_ObjectHideFlags: 0
@@ -12948,7 +13038,7 @@ MeshRenderer:
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_Materials:
-  - {fileID: 10303, guid: 0000000000000000f000000000000000, type: 0}
+  - {fileID: 2100000, guid: b7d87ad0e1e17425f918935d7110779b, type: 2}
   m_SubsetIndices: 
   m_StaticBatchRoot: {fileID: 0}
   m_UseLightProbes: 1
