@@ -21,6 +21,7 @@ GameObject:
   - 114: {fileID: 11425266}
   - 114: {fileID: 11447462}
   - 114: {fileID: 11473936}
+  - 114: {fileID: 11401256}
   m_Layer: 0
   m_Name: Player
   m_TagString: MainCamera
@@ -86,6 +87,25 @@ Behaviour:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 187416}
   m_Enabled: 1
+--- !u!114 &11401256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 51217cec204c0484e8f7df3cab4694d9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shootSounds:
+  - {fileID: 8300000, guid: 67422e7ec4e164909afbacc289a85693, type: 3}
+  reloadSounds:
+  - {fileID: 8300000, guid: c789cf189dc9c45a09ecfeaf93249f10, type: 3}
+  emptySound: {fileID: 8300000, guid: 67422e7ec4e164909afbacc289a85693, type: 3}
+  shotTime: 2
+  reloadTime: 2
+  shotsUntilReload: 3
 --- !u!114 &11408352
 MonoBehaviour:
   m_ObjectHideFlags: 1
