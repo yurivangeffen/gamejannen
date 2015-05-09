@@ -7,7 +7,7 @@ public class DuckSpawner : MonoBehaviour
 
     public float spawnTime = 2;
     public float spawnTimeDeviation = 1;
-    public float spawnDistanceFromPlayer = 4;
+    public float spawnDistanceFromPlayer = 2;
 
     private float spawnTimer = 0;
 
@@ -33,7 +33,11 @@ public class DuckSpawner : MonoBehaviour
 
     private void SpawnDuck()
     {
-        Vector3 spawnPosition = new Vector3(0, 0, -2);
-        Instantiate(Duck, spawnPosition, Quaternion.identity);
+        float angle = Random.value * (2 * Mathf.PI);
+        float x = Mathf.Cos(angle) * spawnDistanceFromPlayer;
+	    float z = Mathf.Sin(angle) * spawnDistanceFromPlayer;
+        Vector3 spawnPosition = new Vector3(x, 0, z);
+        GameObject GO = Instantiate(Duck, spawnPosition, Quaternion.identity) as GameObject;
+        GO.transform.LookAt(Camera.main.transform);
     }
 }
