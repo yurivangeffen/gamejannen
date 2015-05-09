@@ -92,6 +92,8 @@ public class Dog : Shootable
 
     public void Jump()
     {
+        if (currentMode != Mode.Walking)
+            return;
         spriteRenderer.sprite = sprites[5];//surprised sprite
         timer = 3000;//make sure this sprite stays
         currentMode = Mode.None;
@@ -132,6 +134,8 @@ public class Dog : Shootable
 
     public void GetDuck(Vector3 position)
     {
+        if (currentMode == Mode.Walking)
+            return;
         ducksToGet.Add(position);
     }
 
