@@ -2,7 +2,8 @@
 using System.Collections.Generic;
 
 public class Gun : MonoBehaviour {
-	
+
+	public string name = "Unknown";
 	public List<AudioClip> shootSounds;
 	public List<AudioClip> reloadSounds;
 	public AudioClip emptySound;
@@ -31,51 +32,46 @@ public class Gun : MonoBehaviour {
 				doEndReload();
 		}
 
-		// Left mouse pressed
-		if (Input.GetMouseButtonDown (0)) {
-			if(canShoot())
-				doShoot();
-			else if(shot >= shotsUntilReload)
-				doEmpty();
-		}
-
-		// Left mouse pressed
-		if (Input.GetMouseButtonDown (1)) {
-			if(canReload())
-				doStartReload();
-		}
-
 	}
 	
-	void doShoot() {
+	public void doShoot() {
 		shot++;
 		passedTime = 0f;
 		
 		AudioSource.PlayClipAtPoint (shootSounds [Random.Range(0, shootSounds.Count)], transform.position);
 	}
 	
-	void doStartReload() {
+	public void doStartReload() {
 		reloading = true;
 		passedReloadTime = 0f;
 		
 		AudioSource.PlayClipAtPoint (reloadSounds [Random.Range(0, reloadSounds.Count)], transform.position);
 	}
 
-	void doEndReload() {
+	public void doEndReload() {
 		shot = 0;
 		reloading = false;
 	}
 
-	void doEmpty() {
+	public void doEmpty() {
 		if(!reloading)
 			AudioSource.PlayClipAtPoint (emptySound, transform.position);
 	}
 
-	bool canShoot() {
+	public bool canShoot() {
 		return !reloading && shot < shotsUntilReload && passedTime > shotTime;
 	}
 
-	bool canReload() {
+	public bool canReload() {
 		return !reloading & passedTime > shotTime;
+	}
+
+	public bool isEmpty() {
+		return shot >= shotsUntilReload;
+	}
+
+	public override string ToString ()
+	{
+		return string.Format ("[Gun] {0}", name);
 	}
 }
