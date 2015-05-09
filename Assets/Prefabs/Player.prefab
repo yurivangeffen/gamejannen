@@ -13,6 +13,7 @@ GameObject:
   - 124: {fileID: 12487352}
   - 81: {fileID: 8153144}
   - 114: {fileID: 11408352}
+  - 114: {fileID: 11450798}
   m_Layer: 0
   m_Name: Player
   m_TagString: MainCamera
@@ -89,13 +90,24 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f8baea155d5ac14c98a453f85b2138b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  axes: 0
   sensitivityX: 15
   sensitivityY: 15
-  minimumX: -360
-  maximumX: 360
   minimumY: -60
   maximumY: 60
+--- !u!114 &11450798
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 187416}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 028b958773ca741c5aa09e013a0915be, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  toPlace: {fileID: 118526, guid: 447cb2e72485c4148b84dddc710a2eab, type: 2}
+  radius: 4
+  objectWidth: 1
 --- !u!124 &12487352
 Behaviour:
   m_ObjectHideFlags: 1
