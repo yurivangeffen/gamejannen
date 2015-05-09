@@ -12,6 +12,8 @@ public class CameraMovement : MonoBehaviour
 
     public Text rotationScore;
 
+    public GameObject explosionObject;
+
     float rotationY = 0F;
 
     //360 noscope variabelen #yolo
@@ -32,7 +34,8 @@ public class CameraMovement : MonoBehaviour
 	int score;
 
 	ScoreKeeper scoreUI;
-    Text timeText;
+    public Text timeText;
+    private float time = 5;//tijd voor het level in seconden
 
     void Start()
 	{
@@ -40,8 +43,42 @@ public class CameraMovement : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;//Uncomment dit voor de final versie
     }
 
+    private void TimeUp()
+    {
+        float yRot = -Quaternion.ToEulerAngles(transform.rotation).y + .5f*Mathf.PI;
+        //float radYRot = yRot / (180 * Mathf.PI);
+        Debug.Log(yRot);
+        float distance = 4;
+        float x = Mathf.Cos(yRot) * distance;
+        float z = Mathf.Sin(yRot) * distance;
+        Vector3 position = new Vector3(x, 0, z);
+        Instantiate(explosionObject, position, Quaternion.identity);
+        
+
+    }
+
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.B))
+            TimeUp();
+
+
+        time -= Time.deltaTime;
+        int minutes = (int)(time / 60);
+        int seconds = (int)(time % 60);
+        if (seconds >= 10)
+            timeText.text = minutes + ":" + seconds;
+        else
+            timeText.text = minutes + ":0" + seconds;
+
+        if (minutes < 1 && seconds < 1)
+        {
+            TimeUp();
+            time = 300000;
+        }
+
+
         float rotationX = transform.localEulerAngles.y + Input.GetAxis("Mouse X") * sensitivityX;//Getal tussen 0-360, staat voor huidige rotatie om Y as van speler object
 
         rotationY += Input.GetAxis("Mouse Y") * sensitivityY;
