@@ -32,6 +32,7 @@ public class CameraMovement : MonoBehaviour
 	int score;
 
 	ScoreKeeper scoreUI;
+    Text timeText;
 
     void Start()
 	{
@@ -101,7 +102,6 @@ public class CameraMovement : MonoBehaviour
         {
             Debug.Log("Je hebt een eend geschoten! Je nosocpe score is: " + rotationBeforeTimer + ".");
 			scoreUI.setScore((int)rotationBeforeTimer);
-
         }
         else
         {//niet aan het draaien
